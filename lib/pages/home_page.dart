@@ -8,8 +8,13 @@ class HomePage extends StatelessWidget{
     Item(name: 'Salt', price: 2000)
   ];
   @override
+  //Text(
+  //             "Daftar Produk",
+  //             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+  //           ),
   Widget build(BuildContext context){
     return Scaffold(
+      appBar: AppBar(title: Text("Belanja Apps"),),
         body: Container(
           margin: EdgeInsets.all(8),
           child: ListView.builder(

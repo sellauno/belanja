@@ -2,18 +2,48 @@ import 'package:belanja/models/item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class ItemPage extends StatelessWidget{
+class ItemPage extends StatelessWidget {
   @override
-  
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     final Item itemArgs = ModalRoute.of(context).settings.arguments;
+    final String itemName = itemArgs.name.toString();
+    final String itemPrice = itemArgs.price.toString();
+
     return Scaffold(
-        body: Container(
-          margin: EdgeInsets.all(8),
-          child: Text(
-            itemArgs.name.toString(),
+      appBar: AppBar(
+        title: Text("Belanja App"),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Container(
+            margin: EdgeInsets.all(8),
+            padding: EdgeInsets.all(8),
+            child: Text(
+              "Detail Produk",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+            ),
           ),
-        ),
-      );
+          Column(
+            children: [
+              Container(
+                margin: EdgeInsets.all(8),
+                padding: EdgeInsets.all(8),
+                child: Text(
+                  "Nama Produk : $itemName",
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.all(8),
+                padding: EdgeInsets.all(8),
+                child: Text(
+                  "Harga Produk : $itemPrice",
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }
