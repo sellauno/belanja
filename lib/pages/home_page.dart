@@ -4,14 +4,12 @@ import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget{
   final List<Item> items = [
-    Item(name: 'Sugar', price: 5000),
-    Item(name: 'Salt', price: 2000)
+    Item(name: 'Sugar', price: 5000, stok: 10),
+    Item(name: 'Salt', price: 2000, stok: 5),
+    Item(name: 'Tea', price: 3500, stok: 10),
+    Item(name: 'Coffee', price: 5000, stok: 8),
   ];
   @override
-  //Text(
-  //             "Daftar Produk",
-  //             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-  //           ),
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(title: Text("Belanja Apps"),),

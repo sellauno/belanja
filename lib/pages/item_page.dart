@@ -8,6 +8,7 @@ class ItemPage extends StatelessWidget {
     final Item itemArgs = ModalRoute.of(context).settings.arguments;
     final String itemName = itemArgs.name.toString();
     final String itemPrice = itemArgs.price.toString();
+    final String itemStok = itemArgs.stok.toString();
 
     return Scaffold(
       appBar: AppBar(
@@ -25,19 +26,28 @@ class ItemPage extends StatelessWidget {
             ),
           ),
           Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                margin: EdgeInsets.all(8),
+                margin: EdgeInsets.only(left: 8),
                 padding: EdgeInsets.all(8),
                 child: Text(
                   "Nama Produk : $itemName",
                 ),
               ),
               Container(
-                margin: EdgeInsets.all(8),
+                margin: EdgeInsets.only(left: 8),
                 padding: EdgeInsets.all(8),
                 child: Text(
-                  "Harga Produk : $itemPrice",
+                  "Harga         : $itemPrice",
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 8),
+                padding: EdgeInsets.all(8),
+                child: Text(
+                  "Stok           : $itemStok",
                 ),
               ),
             ],
